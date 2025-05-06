@@ -1,51 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cee3ee Mods.</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
     body {
       margin: 0;
-      background-color: #C3C3FF; /* A light purple */
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: repeating-conic-gradient(#2a003f 0% 25%, #000 0% 50%) 0% 0% / 64px 64px;
+      color: #fff;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      color: white;
-      font-size: 2em;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 30px;
+      margin-top: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid #aa00ff;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #aa00ff;
+    }
+
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #aa00ff;
+      text-shadow: 0 0 10px #aa00ff, 0 0 20px #aa00ff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .button, .patreon-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      color: #aa00ff;
+      background: transparent;
+      border: 2px solid #aa00ff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .button:hover, .patreon-link:hover {
+      background: #aa00ff;
+      color: #000;
+      box-shadow: 0 0 15px #aa00ff;
+    }
+
+    .mod-list {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .mod {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #aa00ff;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .mod h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .mod p {
+      margin: 10px 0 0;
+      color: #ccc;
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const text = "Cee3ee Mods";
-      let index = 0;
-      let reverse = false;
-
-      function updateTitle() {
-        if (!reverse) {
-          index++;
-          if (index > text.length) {
-            reverse = true;
-            index = text.length;
-          }
-        } else {
-          index--;
-          if (index < 0) {
-            reverse = false;
-            index = 0;
-          }
-        }
-
-        document.title = text.slice(0, index);
-        setTimeout(updateTitle, 1000);
-      }
-
-      updateTitle();
-    });
-  </script>
 </head>
 <body>
-  <div>Welcome to Cee3ee Mods!</div>
+  <div class="container">
+    <div class="logo">Cee3ee Mods</div>
+    <p>
+      Welcome to the future of Minecraft Java modding.<br/>
+      We build next-generation mods with powerful customization, performance boosts, and game-enhancing features.
+    </p>
+
+    <div class="mod-list">
+      <h2 style="color:#aa00ff; text-align:center;">🚀 Our Mods</h2>
+
+      <div class="mod">
+        <h2>CleanSheet</h2>
+        <p>
+          A powerful enhancement mod for Minecraft Java Edition.<br/>
+          Adds deep customization options, better optimization, and modern UI features.<br/>
+          Designed to keep your game running smooth and clean.
+        </p>
+      </div>
+    </div>
+
+    <a class="patreon-link" href="https://www.patreon.com/Cee3eeMods" target="_blank">
+      Support Us on Patreon
+    </a>
+  </div>
+
+  <script>
+    const titleText = "Cee3ee Mods.";
+    let index = 0;
+    let direction = 1;
+
+    function typeTitle() {
+      document.title = titleText.slice(0, index);
+      if (direction === 1) {
+        if (index < titleText.length) {
+          index++;
+        } else {
+          direction = -1;
+          setTimeout(typeTitle, 1000); // Pause at full
+          return;
+        }
+      } else {
+        if (index > 0) {
+          index--;
+        } else {
+          direction = 1;
+        }
+      }
+      setTimeout(typeTitle, 150);
+    }
+
+    typeTitle();
+  </script>
 </body>
 </html>
