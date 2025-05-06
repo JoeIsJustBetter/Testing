@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #C3C3FF; /* A light purple */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+      font-size: 2em;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = "Cee3ee Mods";
+      let index = 0;
+      let reverse = false;
+
+      function updateTitle() {
+        if (!reverse) {
+          index++;
+          if (index > text.length) {
+            reverse = true;
+            index = text.length;
+          }
+        } else {
+          index--;
+          if (index < 0) {
+            reverse = false;
+            index = 0;
+          }
+        }
+
+        document.title = text.slice(0, index);
+        setTimeout(updateTitle, 1000);
+      }
+
+      updateTitle();
+    });
+  </script>
+</head>
+<body>
+  <div>Welcome to Cee3ee Mods!</div>
+</body>
+</html>
