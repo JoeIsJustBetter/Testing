@@ -3,7 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cee3ee Mods.</title>
+<script>
+  const fullText = "Cee3ee Mods.";
+  let index = 0;
+  let typing = true;
+
+  function typeTitle() {
+    if (typing) {
+      index++;
+      if (index > fullText.length) {
+        typing = false;
+        setTimeout(typeTitle, 1000); // pause when full
+        return;
+      }
+    } else {
+      index--;
+      if (index === 0) {
+        typing = true;
+      }
+    }
+
+    document.title = fullText.slice(0, index);
+    setTimeout(typeTitle, 150);
+  }
+
+  // Initialize immediately with at least one character to avoid blank titles
+  document.title = fullText[0];
+  setTimeout(typeTitle, 150);
+</script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
