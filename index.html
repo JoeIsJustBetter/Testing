@@ -49,7 +49,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       padding: 30px;
       margin-top: 40px;
       background: rgba(0, 0, 0, 0.7);
@@ -118,57 +118,94 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">Cee3ee Mods</div>
-    <p>
-      Welcome to the future of Minecraft Java modding.<br/>
-      We build next-generation mods with powerful customization, performance boosts, and game-enhancing features.
-    </p>
+  <!-- Layout Wrapper -->
+  <div style="display: flex; justify-content: center; align-items: flex-start; margin-top: 20px; gap: 20px;">
+    
+    <!-- Left Tall Ad -->
+    <div class="ad-left">
+      <script type="text/javascript">
+        atOptions = {
+          'key': 'b53794ba87eec11a82cae794d10578d5',
+          'format': 'iframe',
+          'height': 600,
+          'width': 160,
+          'params': {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/b53794ba87eec11a82cae794d10578d5/invoke.js"></script>
+    </div>
 
-    <div class="mod-list">
-      <h2 style="color:#aa00ff; text-align:center;">🚀 Our Mods</h2>
+    <!-- Main Content with Top and Bottom Ads -->
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      
+      <!-- Top Wide Ad -->
+      <div class="ad-top" style="margin-bottom: 20px;">
+        <script type="text/javascript">
+          atOptions = {
+            'key': '8881da2e139c03bae810f89c31ea34c4',
+            'format': 'iframe',
+            'height': 50,
+            'width': 320,
+            'params': {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/8881da2e139c03bae810f89c31ea34c4/invoke.js"></script>
+      </div>
 
-      <div class="mod">
-        <h2>CleanSheet</h2>
+      <!-- Main Website Container -->
+      <div class="container">
+        <div class="logo">Cee3ee Mods</div>
         <p>
-          A powerful enhancement mod for Minecraft Java Edition.<br/>
-          Adds deep customization options, better optimization, and modern UI features.<br/>
-          Designed to keep your game running smooth and clean.
+          Welcome to the future of Minecraft Java modding.<br/>
+          We build next-generation mods with powerful customization, performance boosts, and game-enhancing features.
         </p>
+
+        <div class="mod-list">
+          <h2 style="color:#aa00ff; text-align:center;">🚀 Our Mods</h2>
+
+          <div class="mod">
+            <h2>CleanSheet</h2>
+            <p>
+              A powerful enhancement mod for Minecraft Java Edition.<br/>
+              Adds deep customization options, better optimization, and modern UI features.<br/>
+              Designed to keep your game running smooth and clean.
+            </p>
+          </div>
+        </div>
+
+        <a class="patreon-link" href="https://www.patreon.com/Cee3eeMods" target="_blank">
+          Support Us on Patreon
+        </a>
+      </div>
+
+      <!-- Bottom Box Ad -->
+      <div class="ad-bottom" style="margin-top: 30px;">
+        <script type="text/javascript">
+          atOptions = {
+            'key': '8e9cb65ec7af863fc57bb40d6a596076',
+            'format': 'iframe',
+            'height': 250,
+            'width': 300,
+            'params': {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/8e9cb65ec7af863fc57bb40d6a596076/invoke.js"></script>
       </div>
     </div>
 
-    <a class="patreon-link" href="https://www.patreon.com/Cee3eeMods" target="_blank">
-      Support Us on Patreon
-    </a>
+    <!-- Right Tall Ad -->
+    <div class="ad-right">
+      <script type="text/javascript">
+        atOptions = {
+          'key': 'b53794ba87eec11a82cae794d10578d5',
+          'format': 'iframe',
+          'height': 600,
+          'width': 160,
+          'params': {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/b53794ba87eec11a82cae794d10578d5/invoke.js"></script>
+    </div>
   </div>
-
-  <script>
-    const titleText = "Cee3ee Mods.";
-    let index = 0;
-    let direction = 1;
-
-    function typeTitle() {
-      document.title = titleText.slice(0, index);
-      if (direction === 1) {
-        if (index < titleText.length) {
-          index++;
-        } else {
-          direction = -1;
-          setTimeout(typeTitle, 1000); // Pause at full
-          return;
-        }
-      } else {
-        if (index > 0) {
-          index--;
-        } else {
-          direction = 1;
-        }
-      }
-      setTimeout(typeTitle, 150);
-    }
-
-    typeTitle();
-  </script>
 </body>
 </html>
